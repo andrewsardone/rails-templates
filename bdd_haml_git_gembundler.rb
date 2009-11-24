@@ -43,6 +43,8 @@ disable_system_gems
 bundle_path '#{bundle_path}'
 
 gem 'rails', '#{Rails::VERSION::STRING}'
+
+gem 'haml', '2.2.13'
 }.strip
 
 # Ignore files under the bundle_path that can be regenerated from the 
@@ -73,4 +75,16 @@ Rails::Initializer.mOdule_eval do
     load_environment_without_bundler
   end
 end
+}
+
+# Setup haml
+file 'vendor/plugins/haml/init.rb', %{
+begin
+  require File.join(File.dirname(__FILE__), 'lib', 'haml') # From here
+rescue LoadError
+  require 'haml' # From gem
+end
+
+# Load Haml and Sass.
+Haml.init_rails(binding)
 }
