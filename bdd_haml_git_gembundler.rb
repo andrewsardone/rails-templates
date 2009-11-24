@@ -106,10 +106,13 @@ webrat*.html
 
 run "cp config/database.yml config/database.yml.sample"
 
-# rails:rm_tmp_dirs
+# Delete unnecessary files
 ["./tmp/pids", "./tmp/sessions", "./tmp/sockets", "./tmp/cache"].each do |f|
-  run("rmdir ./#{f}")
+  run "rmdir ./#{f}"
 end
+run "rm README"
+run "rm public/index.html"
+run "rm public/favicon.ico"
 
 # git:hold_empty_dirs
 run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
