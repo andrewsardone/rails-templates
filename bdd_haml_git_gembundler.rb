@@ -88,3 +88,28 @@ end
 # Load Haml and Sass.
 Haml.init_rails(binding)
 }
+
+# add the standard stuff to .gitignore
+append_file '.gitignore', %{
+.DS_Store
+*~
+log/*.log
+tmp/**/*
+log/*.pid
+log/call_*
+db/*.sqlite3
+db/*.bkp
+db/*.bak
+*.swp
+webrat*.html
+}
+
+run "cp config/database.yml config/database.yml.sample"
+
+# rails:rm_tmp_dirs
+["./tmp/pids", "./tmp/sessions", "./tmp/sockets", "./tmp/cache"].each do |f|
+  run("rmdir ./#{f}")
+end
+
+# git:hold_empty_dirs
+run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
