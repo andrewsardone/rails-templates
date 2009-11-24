@@ -59,9 +59,10 @@ end
 # Ignore files under the bundle_path that can be regenerated from the 
 # git repository
 append_file '.gitignore', %{
-gems/*
-!gems/cache
-!gems/bundler}
+#{bundle_path}/*
+!#{bundle_path}/cache
+!#{bundle_path}/bundler
+}
 
 # Run `script/bundle` to actually grab and bundle our gems
 run 'script/bundle'
