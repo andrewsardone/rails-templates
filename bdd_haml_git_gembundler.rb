@@ -106,6 +106,7 @@ log/*.log
 tmp/**/*
 log/*.pid
 log/call_*
+config/database.yml
 db/*.sqlite3
 db/*.bkp
 db/*.bak
