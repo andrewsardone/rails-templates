@@ -45,6 +45,9 @@ bundle_path '#{bundle_path}'
 gem 'rails', '#{Rails::VERSION::STRING}'
 
 gem 'haml', '2.2.13'
+gem 'clearance'
+gem 'will_paginate'
+gem 'resource_controller'
 }.strip
 
 # Ignore files under the bundle_path that can be regenerated from the 
