@@ -129,3 +129,7 @@ run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec tou
 
 # Grab jQuery
 run "curl -L http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js > public/javascripts/jquery.js"
+
+git :init
+git :add => '.'
+git :commit => "-a -m 'Setting up a new rails app. Copy config/database.yml.sample to config/database.yml and customize.'"
