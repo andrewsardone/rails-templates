@@ -125,3 +125,6 @@ run "rm public/favicon.ico"
 
 # git:hold_empty_dirs
 run("find . \\( -type d -empty \\) -and \\( -not -regex ./\\.git.* \\) -exec touch {}/.gitignore \\;")
+
+# Grab jQuery
+run "curl -L http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js > public/javascripts/jquery.js"
