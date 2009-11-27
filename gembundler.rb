@@ -48,11 +48,13 @@ gem 'haml', '2.2.13'
 gem 'clearance'
 gem 'will_paginate'
 gem 'resource_controller'
+gem 'rspec-rails'
 
 only :test do
   gem 'rspec'
   gem 'cucumber'
   gem 'webrat'
+  gem 'factory_girl'
 end
 }.strip
 
