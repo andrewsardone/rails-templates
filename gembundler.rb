@@ -69,6 +69,10 @@ append_file '.gitignore', %{
 # Run `script/bundle` to actually grab and bundle our gems
 run 'script/bundle'
 
+# Setup rspec and cucumber
+run 'script/generate rspec'
+run 'script/generate cucumber'
+
 # Ensure the bundler environment is loaded
 append_file '/config/preinitializer.rb', %{
 require File.expand_path(File.join(File.dirname(__FILE__), "..", "#{bundle_path}", "environment"))
