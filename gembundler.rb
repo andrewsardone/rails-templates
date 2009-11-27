@@ -79,7 +79,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 # Hijack rails initializer to load the bundler gem environment before loading the rails environment.
 
-Rails::Initializer.mOdule_eval do
+Rails::Initializer.module_eval do
   alias load_environment_without_bundler load_environment
   
   def load_environment
